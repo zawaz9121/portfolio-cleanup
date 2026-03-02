@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="クリアライフ - 不用品回収・遺品整理・ゴミ屋敷清掃。最短30分でお伺い。見積もり無料・追加料金なし。東京・神奈川・埼玉・千葉、即日対応。">
+<meta property="og:title" content="クリアライフ | 不用品回収・遺品整理・ゴミ屋敷清掃">
+<meta property="og:description" content="最短30分でお伺い。見積もり無料・追加料金なし。東京・神奈川・埼玉・千葉、即日対応いたします。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<title>クリアライフ | 不用品回収・遺品整理・ゴミ屋敷清掃【東京・神奈川・埼玉・千葉】</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1b3a5c;
+  --navy-dark:#132a42;
+  --green:#2ecc71;
+  --green-hover:#27ae60;
+  --orange:#e67e22;
+  --orange-hover:#d35400;
+  --white:#ffffff;
+  --light-gray:#f5f7fa;
+  --text:#333333;
+  --text-light:#666666;
+  --border:#e0e4ea;
+  --radius:12px;
+  --radius-sm:8px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.section-padding{padding:88px 0}
+.section-title{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;text-align:center;color:var(--navy);margin-bottom:8px}
+.section-subtitle{text-align:center;font-size:.875rem;color:var(--text-light);margin-bottom:52px}
+.bg-gray{background:var(--light-gray)}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* Buttons */
+.btn{display:inline-block;padding:16px 36px;font-size:1rem;font-weight:700;border-radius:var(--radius-sm);cursor:pointer;transition:transform .3s,box-shadow .3s,background .3s;border:none;letter-spacing:.04em;text-align:center}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(46,204,113,.35)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--orange-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(230,126,34,.35)}
+.btn-lg{padding:20px 48px;font-size:1.0625rem;border-radius:var(--radius)}
+
+/* ===== HEADER ===== */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.06);padding:10px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 20px}
+.logo{font-size:1.375rem;font-weight:900;color:var(--navy);letter-spacing:.04em}
+.logo span{color:var(--green)}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-phone{font-size:1.25rem;font-weight:700;color:var(--navy);letter-spacing:.04em}
+.header-phone small{display:block;font-size:.625rem;font-weight:400;color:var(--text-light);text-align:center}
+.header-btn{padding:10px 24px;font-size:.8125rem;border-radius:var(--radius-sm)}
+
+/* ===== HERO ===== */
+.hero{position:relative;padding:140px 0 80px;min-height:600px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,58,92,.88),rgba(27,58,92,.7))}
+.hero-content{position:relative;max-width:700px;color:#fff}
+.hero-content h1{font-size:clamp(1.75rem,5vw,2.75rem);font-weight:900;line-height:1.4;margin-bottom:20px;letter-spacing:.04em}
+.hero-content>p{font-size:clamp(.875rem,1.5vw,1.0625rem);font-weight:400;opacity:.9;line-height:1.9;margin-bottom:32px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.hero-badge{display:inline-block;padding:8px 24px;background:rgba(230,126,34,.9);border-radius:50px;font-size:.8125rem;font-weight:700;color:#fff;margin-bottom:28px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hero-stat{background:rgba(255,255,255,.12);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius-sm);padding:14px 20px;text-align:center}
+.hero-stat .num{display:block;font-size:1.25rem;font-weight:900;color:var(--green)}
+.hero-stat .label{font-size:.6875rem;opacity:.8}
+
+/* ===== PROBLEMS ===== */
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.problem-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:transform .3s,box-shadow .3s}
+.problem-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.problem-icon{font-size:2rem;margin-bottom:12px}
+.problem-card p{font-size:.9375rem;font-weight:500}
+
+/* ===== REASONS ===== */
+.reasons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.reason-card{background:var(--white);border-radius:var(--radius);padding:36px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04);border-left:4px solid var(--green);transition:transform .3s}
+.reason-card:hover{transform:translateY(-3px)}
+.reason-card h3{font-size:1.0625rem;font-weight:700;color:var(--navy);margin-bottom:12px}
+.reason-card p{font-size:.875rem;color:var(--text-light);line-height:1.9}
+
+/* ===== SERVICES ===== */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s}
+.service-card:hover{transform:translateY(-3px)}
+.service-card img{width:100%;height:200px;object-fit:cover}
+.service-body{padding:28px 24px}
+.service-body h3{font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:12px}
+.service-body p{font-size:.875rem;color:var(--text-light);line-height:1.9}
+
+/* ===== PRICING ===== */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.price-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 20px;text-align:center;transition:transform .3s,box-shadow .3s;position:relative}
+.price-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.price-card.popular{border-color:var(--green);box-shadow:0 4px 16px rgba(46,204,113,.15)}
+.price-popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;padding:4px 20px;border-radius:20px;font-size:.6875rem;font-weight:700;white-space:nowrap}
+.price-card h3{font-size:1.0625rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.price-card .room{font-size:.75rem;color:var(--text-light);margin-bottom:16px}
+.price-amount{font-size:1.75rem;font-weight:900;color:var(--orange);margin-bottom:4px}
+.price-amount small{font-size:.8125rem;font-weight:400}
+.price-from{font-size:.6875rem;color:var(--text-light);margin-bottom:16px}
+.price-features{text-align:left;margin-bottom:20px}
+.price-features li{padding:6px 0;font-size:.8125rem;color:var(--text);padding-left:18px;position:relative}
+.price-features li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700;font-size:.75rem}
+.price-card .use-case{font-size:.75rem;color:var(--text-light);background:var(--light-gray);padding:8px 12px;border-radius:var(--radius-sm);margin-top:8px}
+.pricing-notes{display:flex;justify-content:center;gap:32px;margin-top:32px;flex-wrap:wrap}
+.pricing-note{font-size:.8125rem;color:var(--green);font-weight:700}
+.pricing-note::before{content:'✓ ';font-weight:900}
+
+/* ===== FLOW ===== */
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.flow-step{text-align:center;padding:24px 16px;position:relative}
+.flow-num{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--navy);color:#fff;border-radius:50%;font-size:1rem;font-weight:700;margin-bottom:16px}
+.flow-step h3{font-size:.9375rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.flow-step p{font-size:.8125rem;color:var(--text-light)}
+.flow-step:not(:last-child)::after{content:'';position:absolute;top:40px;right:-12px;width:24px;height:2px;background:var(--border)}
+
+/* ===== REVIEWS ===== */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{background:var(--white);border-radius:var(--radius);padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.review-stars{color:var(--orange);font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+.review-text{font-size:.875rem;color:var(--text);line-height:2;margin-bottom:16px}
+.review-author{font-size:.75rem;color:var(--text-light)}
+
+/* ===== AREA ===== */
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.area-card{background:var(--white);border-radius:var(--radius-sm);padding:24px 20px;border:1px solid var(--border)}
+.area-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--green)}
+.area-card p{font-size:.8125rem;color:var(--text-light);line-height:1.8}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;background:var(--white)}
+.faq-question{width:100%;background:none;border:none;padding:20px 52px 20px 24px;font-size:.9375rem;font-weight:500;text-align:left;cursor:pointer;position:relative;font-family:'Noto Sans JP',sans-serif;color:var(--text)}
+.faq-question::before{content:'Q';display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--navy);color:#fff;border-radius:50%;font-size:.75rem;font-weight:700;margin-right:12px;flex-shrink:0}
+.faq-question::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.25rem;color:var(--navy);transition:transform .3s;font-weight:400}
+.faq-item.open .faq-question::after{transform:translateY(-50%) rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-answer{max-height:300px}
+.faq-answer p{padding:0 24px 20px 64px;font-size:.875rem;color:var(--text-light);line-height:2}
+
+/* ===== FINAL CTA ===== */
+.final-cta{background:var(--navy);color:#fff;text-align:center;padding:80px 24px}
+.final-cta h2{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:700;margin-bottom:12px}
+.final-cta .cta-sub{font-size:.9375rem;opacity:.7;margin-bottom:32px}
+.final-cta-phone{font-size:clamp(2.25rem,6vw,3.5rem);font-weight:900;color:var(--orange);letter-spacing:.04em;margin-bottom:8px}
+.final-cta-phone a{color:var(--orange)}
+.final-cta-note{font-size:.8125rem;opacity:.6;margin-bottom:32px}
+.final-cta-campaign{display:inline-block;margin-top:24px;padding:10px 28px;background:rgba(230,126,34,.15);border:1px solid var(--orange);border-radius:50px;font-size:.8125rem;font-weight:700;color:var(--orange)}
+
+/* ===== FOOTER ===== */
+footer{background:#1a1a2e;color:rgba(255,255,255,.5);padding:48px 24px 32px;font-size:.8125rem;line-height:2}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-col h4{color:rgba(255,255,255,.75);font-size:.875rem;margin-bottom:12px}
+.footer-bottom{max-width:1100px;margin:0 auto;text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-bottom .sample-note{font-size:.625rem;opacity:.4;margin-top:8px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .problems-grid{grid-template-columns:repeat(2,1fr)}
+  .reasons-grid,.reviews-grid,.services-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .flow-grid{grid-template-columns:repeat(2,1fr)}
+  .flow-step:not(:last-child)::after{display:none}
+  .area-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .problems-grid,.pricing-grid,.flow-grid,.area-grid{grid-template-columns:1fr}
+  .section-padding{padding:64px 0}
+  .hero{padding:120px 0 60px;min-height:auto}
+  .hero-stats{gap:12px}
+  .hero-stat{flex:1;min-width:100px;padding:12px 10px}
+  .header-phone{font-size:1rem}
+  .header-btn{display:none}
+  .hero-buttons{flex-direction:column}
+  .hero-buttons .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo"><span>&#9679;</span> クリアライフ</a>
+    <div class="header-right">
+      <a href="tel:0120123456" class="header-phone"><small>24時間受付・年中無休</small>0120-123-456</a>
+      <a href="tel:0120123456" class="btn btn-orange header-btn">今すぐ電話する</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="清掃サービスイメージ"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <div class="hero-badge">Web限定：今なら10%OFF</div>
+    <h1>不用品、まるごと<br>お任せください。</h1>
+    <p>最短30分でお伺い。見積もり無料・追加料金なし。<br>東京・神奈川・埼玉・千葉、即日対応いたします。</p>
+    <div class="hero-buttons">
+      <a href="#final-cta" class="btn btn-green btn-lg">無料見積もりを依頼</a>
+      <a href="tel:0120123456" class="btn btn-orange btn-lg">0120-123-456 に電話する</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">3,000件+</span><span class="label">年間実績</span></div>
+      <div class="hero-stat"><span class="num">98.5%</span><span class="label">顧客満足度</span></div>
+      <div class="hero-stat"><span class="num">最短30分</span><span class="label">で到着</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Problems -->
+<section class="section-padding" id="problems">
+  <div class="container">
+    <h2 class="section-title fade-in">こんなお困りごとありませんか？</h2>
+    <p class="section-subtitle fade-in">一つでも当てはまればお気軽にご相談ください</p>
+    <div class="problems-grid">
+      <div class="problem-card fade-in"><div class="problem-icon">&#128230;</div><p>引越しで大量のゴミが出た</p></div>
+      <div class="problem-card fade-in"><div class="problem-icon">&#127968;</div><p>実家の片付け・遺品整理をしたい</p></div>
+      <div class="problem-card fade-in"><div class="problem-icon">&#128250;</div><p>家電や家具の処分方法がわからない</p></div>
+      <div class="problem-card fade-in"><div class="problem-icon">&#128679;</div><p>ゴミ屋敷を何とかしたい</p></div>
+      <div class="problem-card fade-in"><div class="problem-icon">&#9200;</div><p>急いで片付けなければいけない</p></div>
+      <div class="problem-card fade-in"><div class="problem-icon">&#128197;</div><p>自治体の回収日まで待てない</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Reasons -->
+<section class="bg-gray section-padding" id="reasons">
+  <div class="container">
+    <h2 class="section-title fade-in">クリアライフが選ばれる理由</h2>
+    <p class="section-subtitle fade-in">安心してご依頼いただける4つのポイント</p>
+    <div class="reasons-grid">
+      <div class="reason-card fade-in">
+        <h3>&#128176; 明朗会計・追加料金なし</h3>
+        <p>お見積もり金額から追加料金は一切いただきません。作業後の追加請求もありません。安心の定額制です。</p>
+      </div>
+      <div class="reason-card fade-in">
+        <h3>&#9889; 最短30分・即日対応</h3>
+        <p>お電話いただいてから最短30分でお伺い。急なお片付けにも柔軟に対応いたします。</p>
+      </div>
+      <div class="reason-card fade-in">
+        <h3>&#128230; 分別不要・まるごと回収</h3>
+        <p>面倒な分別は不要です。家具、家電、衣類、食器、何でもまるごとお引き取りします。</p>
+      </div>
+      <div class="reason-card fade-in">
+        <h3>&#128100; 丁寧なスタッフ対応</h3>
+        <p>清潔な制服着用、丁寧な言葉遣い。女性スタッフも在籍しているので、女性のお客様もご安心ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section-padding" id="services">
+  <div class="container">
+    <h2 class="section-title fade-in">サービス内容</h2>
+    <p class="section-subtitle fade-in">お客様のお悩みに合わせた3つのサービス</p>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80" alt="不用品回収" loading="lazy">
+        <div class="service-body">
+          <h3>不用品回収</h3>
+          <p>引越し、模様替え、断捨離。どんな量でもお任せください。1点からでもOKです。</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="遺品整理" loading="lazy">
+        <div class="service-body">
+          <h3>遺品整理</h3>
+          <p>大切な方の遺品を、心を込めて丁寧に仕分け・整理いたします。供養の手配もサポートします。</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <img src="https://images.unsplash.com/photo-1527515637462-cee1ff764e22?w=600&q=80" alt="ゴミ屋敷清掃" loading="lazy">
+        <div class="service-body">
+          <h3>ゴミ屋敷清掃</h3>
+          <p>どんな状態でもお任せください。原状回復から消臭・除菌まで、トータルで対応いたします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="bg-gray section-padding" id="pricing">
+  <div class="container">
+    <h2 class="section-title fade-in">料金プラン</h2>
+    <p class="section-subtitle fade-in">お部屋の広さに合わせた定額パック</p>
+    <div class="pricing-grid">
+      <div class="price-card fade-in">
+        <h3>Sパック</h3>
+        <p class="room">1R〜1K</p>
+        <div class="price-amount">9,800<small>円〜</small></div>
+        <p class="price-from">税込</p>
+        <ul class="price-features">
+          <li>軽トラック1台分</li>
+          <li>作業員1名</li>
+        </ul>
+        <div class="use-case">一人暮らしの片付けに</div>
+      </div>
+      <div class="price-card popular fade-in">
+        <div class="price-popular-badge">人気No.1</div>
+        <h3>Mパック</h3>
+        <p class="room">1DK〜2DK</p>
+        <div class="price-amount">29,800<small>円〜</small></div>
+        <p class="price-from">税込</p>
+        <ul class="price-features">
+          <li>2tトラック1台分</li>
+          <li>作業員2名</li>
+        </ul>
+        <div class="use-case">カップル・少人数の引越しに</div>
+      </div>
+      <div class="price-card fade-in">
+        <h3>Lパック</h3>
+        <p class="room">2LDK〜3LDK</p>
+        <div class="price-amount">54,800<small>円〜</small></div>
+        <p class="price-from">税込</p>
+        <ul class="price-features">
+          <li>2tトラック2台分</li>
+          <li>作業員3名</li>
+        </ul>
+        <div class="use-case">ファミリーの引越し・実家の片付けに</div>
+      </div>
+      <div class="price-card fade-in">
+        <h3>LLパック</h3>
+        <p class="room">4LDK以上</p>
+        <div class="price-amount">要見積もり</div>
+        <p class="price-from">&nbsp;</p>
+        <ul class="price-features">
+          <li>お客様に合わせたお見積もり</li>
+          <li>作業員4名以上</li>
+        </ul>
+        <div class="use-case">ゴミ屋敷・大量処分に</div>
+      </div>
+    </div>
+    <div class="pricing-notes fade-in">
+      <span class="pricing-note">出張見積もり無料</span>
+      <span class="pricing-note">追加料金なし</span>
+    </div>
+  </div>
+</section>
+
+<!-- Flow -->
+<section class="section-padding" id="flow">
+  <div class="container">
+    <h2 class="section-title fade-in">ご利用の流れ</h2>
+    <p class="section-subtitle fade-in">かんたん4ステップで完了</p>
+    <div class="flow-grid">
+      <div class="flow-step fade-in">
+        <div class="flow-num">1</div>
+        <h3>お問い合わせ</h3>
+        <p>電話・Webで24時間受付</p>
+      </div>
+      <div class="flow-step fade-in">
+        <div class="flow-num">2</div>
+        <h3>無料見積もり</h3>
+        <p>現地またはお電話で概算をご案内</p>
+      </div>
+      <div class="flow-step fade-in">
+        <div class="flow-num">3</div>
+        <h3>作業実施</h3>
+        <p>ご希望の日時に作業員がお伺い</p>
+      </div>
+      <div class="flow-step fade-in">
+        <div class="flow-num">4</div>
+        <h3>お支払い</h3>
+        <p>作業完了後にお支払い。カード対応可</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-gray section-padding" id="reviews">
+  <div class="container">
+    <h2 class="section-title fade-in">お客様の声</h2>
+    <p class="section-subtitle fade-in">ご利用いただいたお客様からの口コミ</p>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">母の遺品整理をお願いしました。丁寧に仕分けしていただき、思い出の品もきちんと残してくださいました。</p>
+        <p class="review-author">40代女性・東京都世田谷区</p>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">急な引越しで困っていたところ、当日対応していただけました。追加料金もなく、見積もり通りで安心でした。</p>
+        <p class="review-author">30代男性・神奈川県横浜市</p>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">ゴミ屋敷状態の実家を片付けていただきました。恥ずかしかったのですが、嫌な顔ひとつせず対応してくださり感謝しています。</p>
+        <p class="review-author">50代女性・埼玉県さいたま市</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Area -->
+<section class="section-padding" id="area">
+  <div class="container">
+    <h2 class="section-title fade-in">対応エリア</h2>
+    <p class="section-subtitle fade-in">1都3県をカバー。お気軽にお問い合わせください</p>
+    <div class="area-grid">
+      <div class="area-card fade-in">
+        <h3>東京都</h3>
+        <p>23区全域、多摩地域</p>
+      </div>
+      <div class="area-card fade-in">
+        <h3>神奈川県</h3>
+        <p>横浜市、川崎市、相模原市ほか</p>
+      </div>
+      <div class="area-card fade-in">
+        <h3>埼玉県</h3>
+        <p>さいたま市、川口市、所沢市ほか</p>
+      </div>
+      <div class="area-card fade-in">
+        <h3>千葉県</h3>
+        <p>千葉市、船橋市、市川市ほか</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-gray section-padding" id="faq">
+  <div class="container">
+    <h2 class="section-title fade-in">よくある質問</h2>
+    <p class="section-subtitle fade-in">お客様からよくいただくご質問</p>
+    <div class="faq-list">
+      <div class="faq-item fade-in">
+        <button class="faq-question">見積もり後にキャンセルできますか？</button>
+        <div class="faq-answer"><p>はい、お見積もりは完全無料です。キャンセル料も一切かかりませんのでご安心ください。</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question">当日の回収は可能ですか？</button>
+        <div class="faq-answer"><p>はい、空き状況によりますが当日対応も可能です。お急ぎの場合はお電話でご連絡ください。</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question">エアコンやテレビなどのリサイクル家電も回収できますか？</button>
+        <div class="faq-answer"><p>はい、リサイクル家電も回収可能です。リサイクル料金込みの明朗価格でご案内します。</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question">作業時間はどのくらいですか？</button>
+        <div class="faq-answer"><p>お荷物の量により異なりますが、Sパックで約30分〜1時間、Mパックで約1〜2時間が目安です。</p></div>
+      </div>
+      <div class="faq-item fade-in">
+        <button class="faq-question">支払い方法は何がありますか？</button>
+        <div class="faq-answer"><p>現金、クレジットカード、銀行振込、各種電子マネーに対応しています。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="final-cta">
+  <div class="fade-in">
+    <h2>まずは無料見積もりから。<br>お気軽にご連絡ください。</h2>
+    <p class="cta-sub">24時間受付・年中無休</p>
+    <div class="final-cta-phone"><a href="tel:0120123456">0120-123-456</a></div>
+    <p class="final-cta-note">通話料無料・スマホからタップで発信</p>
+    <a href="#" class="btn btn-green btn-lg">無料見積もりを依頼する</a>
+    <div class="final-cta-campaign">Web限定10%OFFクーポン配布中</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>クリアライフ</h4>
+      <p>不用品回収・遺品整理・ゴミ屋敷清掃<br>TEL: 0120-123-456（24時間受付）</p>
+    </div>
+    <div class="footer-col">
+      <h4>対応エリア</h4>
+      <p>東京都 / 神奈川県 / 埼玉県 / 千葉県</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 クリアライフ All Rights Reserved.</p>
+    <p class="sample-note">※ このサイトはポートフォリオ用のサンプルサイトです。実在するサービスではありません。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll fade-in
+  var els=document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
+      });
+    },{threshold:.1});
+    els.forEach(function(el){obs.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('visible')})}
+
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=this.parentElement;
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
